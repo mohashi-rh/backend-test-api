@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import javax.validation.Valid;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -44,6 +45,13 @@ public class PessoaRESTService {
 		String message = "A pessoa " + pessoa.getNome() + " possui " + _nascimento.get(Calendar.YEAR) + " ano(s) de ideade. Requisição do IP: " + callerIp;
 		
 		return message;
+	}
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	@ApiOperation(value = "Teste da API", notes = "Teste da API", response = String.class)
+	public String testAPI(@HeaderParam("callerIp") String callerIp) throws InvalidPessoa {
+		return "API OK!";
 	}
 	
 	public static void main(String[] args) throws JsonProcessingException {
