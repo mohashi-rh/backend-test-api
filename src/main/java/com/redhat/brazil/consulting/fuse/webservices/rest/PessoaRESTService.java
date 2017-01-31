@@ -26,7 +26,7 @@ public class PessoaRESTService {
 	@Path("/describe")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
 	@ApiOperation(value = "Descreve as propriedades da pessoa", notes = "Mais dadodos abaixo", response = String.class)
     @ApiResponses(value = {
             @ApiResponse(code = 500, message = "Pessoa inválida")            
@@ -49,7 +49,7 @@ public class PessoaRESTService {
 	public static void main(String[] args) throws JsonProcessingException {
 		
 		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.YEAR, 2009);
+		calendar.set(Calendar.YEAR, 1981);
 		
 		Pessoa pessoa = new Pessoa("Sergio", calendar.getTime());
 		
